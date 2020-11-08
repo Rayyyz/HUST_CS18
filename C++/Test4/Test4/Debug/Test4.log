@@ -1,0 +1,21 @@
+﻿  main.cpp
+C:\Users\Ray\Documents\Codes\C++ Programs_VS2019\C++Course_Tests\Test4\Test4\headMAT.h(242,19): warning C4477: “sprintf”: 格式字符串“%6ld”需要类型“long”的参数，但可变参数 1 拥有了类型“T”
+          with
+          [
+              T=__int64
+          ]
+C:\Users\Ray\Documents\Codes\C++ Programs_VS2019\C++Course_Tests\Test4\Test4\headMAT.h(242,19): message : 请考虑在格式字符串中使用“%lld”
+C:\Users\Ray\Documents\Codes\C++ Programs_VS2019\C++Course_Tests\Test4\Test4\headMAT.h(242,19): message : 请考虑在格式字符串中使用“%I64d”
+C:\Users\Ray\Documents\Codes\C++ Programs_VS2019\C++Course_Tests\Test4\Test4\headMAT.h(234): message : 在编译 类 模板 成员函数“char *MAT<__int64>::print(char *) noexcept const”时
+C:\Users\Ray\Documents\Codes\C++ Programs_VS2019\C++Course_Tests\Test4\Test4\main.cpp(46): message : 查看对正在编译的函数 模板 实例化“char *MAT<__int64>::print(char *) noexcept const”的引用
+C:\Users\Ray\Documents\Codes\C++ Programs_VS2019\C++Course_Tests\Test4\Test4\main.cpp(7): message : 查看对正在编译的 类 模板 实例化“MAT<__int64>”的引用
+C:\Users\Ray\Documents\Codes\C++ Programs_VS2019\C++Course_Tests\Test4\Test4\headMAT.h(244,19): warning C4477: “sprintf”: 格式字符串“%6ld”需要类型“long”的参数，但可变参数 1 拥有了类型“T”
+          with
+          [
+              T=__int64
+          ]
+C:\Users\Ray\Documents\Codes\C++ Programs_VS2019\C++Course_Tests\Test4\Test4\headMAT.h(244,19): message : 请考虑在格式字符串中使用“%lld”
+C:\Users\Ray\Documents\Codes\C++ Programs_VS2019\C++Course_Tests\Test4\Test4\headMAT.h(244,19): message : 请考虑在格式字符串中使用“%I64d”
+TestMAT.lib(pch.obj) : warning LNK4099: 未找到 PDB“Test.pdb”(使用“TestMAT.lib(pch.obj)”或在“C:\Users\Ray\Documents\Codes\C++ Programs_VS2019\C++Course_Tests\Test4\Debug\Test.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+TestMAT.lib(TEST.obj) : warning LNK4099: 未找到 PDB“Test.pdb”(使用“TestMAT.lib(TEST.obj)”或在“C:\Users\Ray\Documents\Codes\C++ Programs_VS2019\C++Course_Tests\Test4\Debug\Test.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+  Test4.vcxproj -> C:\Users\Ray\Documents\Codes\C++ Programs_VS2019\C++Course_Tests\Test4\Debug\Test4.exe
