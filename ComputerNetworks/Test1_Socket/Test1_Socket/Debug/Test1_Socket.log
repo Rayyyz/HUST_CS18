@@ -1,0 +1,25 @@
+﻿  server.cpp
+C:\Users\Ray\Documents\Codes\计算机网络\Test1_Socket\Test1_Socket\server.cpp(15,40): warning C4129: “C”: 不可识别的字符转义序列
+C:\Users\Ray\Documents\Codes\计算机网络\Test1_Socket\Test1_Socket\server.cpp(16,24): warning C4129: “C”: 不可识别的字符转义序列
+C:\Users\Ray\Documents\Codes\计算机网络\Test1_Socket\Test1_Socket\server.cpp(83,30): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Ray\Documents\Codes\计算机网络\Test1_Socket\Test1_Socket\server.cpp(95,1): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(133): message : 参见“strcpy”的声明
+C:\Users\Ray\Documents\Codes\计算机网络\Test1_Socket\Test1_Socket\server.cpp(96,1): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(133): message : 参见“strcpy”的声明
+C:\Users\Ray\Documents\Codes\计算机网络\Test1_Socket\Test1_Socket\server.cpp(105,1): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(133): message : 参见“strcpy”的声明
+C:\Users\Ray\Documents\Codes\计算机网络\Test1_Socket\Test1_Socket\server.cpp(109,1): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(133): message : 参见“strcpy”的声明
+C:\Users\Ray\Documents\Codes\计算机网络\Test1_Socket\Test1_Socket\server.cpp(110,1): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(133): message : 参见“strcpy”的声明
+C:\Users\Ray\Documents\Codes\计算机网络\Test1_Socket\Test1_Socket\server.cpp(114,1): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(208): message : 参见“fopen”的声明
+C:\Users\Ray\Documents\Codes\计算机网络\Test1_Socket\Test1_Socket\server.cpp(119,1): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(208): message : 参见“fopen”的声明
+C:\Users\Ray\Documents\Codes\计算机网络\Test1_Socket\Test1_Socket\server.cpp(120,1): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(133): message : 参见“strcpy”的声明
+C:\Users\Ray\Documents\Codes\计算机网络\Test1_Socket\Test1_Socket\server.cpp(128,1): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1774): message : 参见“sprintf”的声明
+C:\Users\Ray\Documents\Codes\计算机网络\Test1_Socket\Test1_Socket\server.cpp(211,1): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winsock2.h(1849): message : 参见“inet_ntoa”的声明
+  Test1_Socket.vcxproj -> C:\Users\Ray\Documents\Codes\计算机网络\Test1_Socket\Debug\Test1_Socket.exe
