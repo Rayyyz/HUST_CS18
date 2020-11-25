@@ -1,5 +1,4 @@
-// StopWait.cpp : 定义控制台应用程序的入口点。
-//
+// main.cpp : 定义控制台应用程序的入口点。
 
 #include "stdafx.h"
 #include "Global.h"
@@ -34,8 +33,8 @@ int main(int argc, char* argv[])
 	pns->init();
 	pns->setRtdSender(ps);
 	pns->setRtdReceiver(pr);
-	pns->setInputFile("C:\\Users\\Ray\\Documents\\Codes\\ComputerNetworks\\Test2_GBN_TCP\\Test2\\Debug\\input.txt");
-	pns->setOutputFile("C:\\Users\\Ray\\Documents\\Codes\\ComputerNetworks\\Test2_GBN_TCP\\Test2\\Debug\\output.txt");
+	pns->setInputFile("C:\\Users\\Ray\\Documents\\Codes\\HUST_CS18\\ComputerNetworks\\Test2_GBN_TCP\\Test2\\Debug\\input.txt");
+	pns->setOutputFile("C:\\Users\\Ray\\Documents\\Codes\\HUST_CS18\\ComputerNetworks\\Test2_GBN_TCP\\Test2\\Debug\\output.txt");
 
 	pns->start();
 

@@ -17,7 +17,7 @@
 #include "TCPRdtSender.h"
 
 // TODO: 在此处引用程序需要的其他头文件
-#pragma comment (lib,"C:\\Users\\Ray\\Documents\\Codes\\ComputerNetworks\\Test2_GBN_TCP\\Test2\\netsimlib.lib")
+#pragma comment (lib,"C:\\Users\\Ray\\Documents\\Codes\\HUST_CS18\\ComputerNetworks\\Test2_GBN_TCP\\Test2\\netsimlib.lib")
 
 #include <iostream>
 using namespace std;
