@@ -1,0 +1,13 @@
+1.安装gtk+3 
+sudo apt-get install libgtk-3-dev
+
+2.校验安装是否成功
+pkg-config --cflags --libs gtk+-3.0
+
+3.编写1-2源文件
+
+4.建立名为build.sh的shell脚本文件
+gcc 1-2Three.c -std=gnu11 -I/usr/include/glib-2.0/ -I/usr/include/atk-1.0/ -I/usr/include/gdk-pixbuf-2.0/ -I/usr/include/cairo/ -I/usr/include/pango-1.0/ -I/usr/lib/x86_64-linux-gnu/glib-2.0/include/ -I/usr/include/gtk-3.0/ -L/usr/lib/x86_64-linux-gnu/ -lgtk-3 -lgobject-2.0 -lpangocairo-1.0 -lgio-2.0 -latk-1.0 -lgdk-3 -lglib-2.0  -o 1-2Three
+
+5.使用./1-2Three执行脚本文件
+
