@@ -1,0 +1,14 @@
+linux编译出错
+1. 在编译内核模块驱动时，如果出现如下警告信息：
+warning: the frame size of 1040 bytes is larger than 1024 bytes。主要是因为内核中设置了堆栈报警大小，其默认为1024bytes。我们主要将其修改为2048就可以消除告警信息。
+如果解决：
+（1）make menuconfig
+（2）kernel hacking
+（3）Compile-time checks and compiler options
+（4）修改warn for stack frames larger than 的数值，将其修改为2048
+（5）重新编译内核模块则不会出现如上的告警信息。
+
+2. 没有规则可制作目标debian/certs/debian-uefi-certs.pem由certs/x509_certificate_list需求停止
+在menuconfig设置CONFIG_SYSTEM_TRUSTED_KEYS=""
+
+TIPS:按下/键，输入要搜索的字符，用数字键跳转
