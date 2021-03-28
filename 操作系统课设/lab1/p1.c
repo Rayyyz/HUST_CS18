@@ -24,7 +24,6 @@ int main( int argc, char *argv[])
 {
 	pthread_t id;
     	int i,ret;
-    	ret=pthread_create(&id,NULL,&thread,NULL);
 
  	//定义一个组装盒;
     	GtkWidget *vbox; 
@@ -43,6 +42,7 @@ int main( int argc, char *argv[])
 	gtk_container_add (GTK_CONTAINER (window), label);
 	gtk_widget_show (label);
 
+    	ret=pthread_create(&id,NULL,&thread,NULL);
 
 	/*开始显示窗口*/
 	gtk_widget_show(window);

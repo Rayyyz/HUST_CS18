@@ -1,0 +1,51 @@
+
+
+
+
+
+//copyfile
+SYSCALL_DEFINE2(copyfile,char*,srcFile,char*,desFile){
+	char buf[1024]; 
+
+	// 转化为内核存储空间
+	char* src_kd = strndup_user(srcFile, PAGE_SIZE);
+	if (IS_ERR(src_kd)){
+		printk("(src_kd)copy: open %s error\n", srcFile);
+		return -1;
+	}
+	char* des_kd = strndup_user(desFile, PAGE_SIZE);
+	if (IS_ERR(des_kd)){
+		printk("(des_kd)copy: create %s error\n", desFile);
+		return -1;
+	}
+	printk("source path : %s, destination path : %s", src_kd, des_kd);
+	mm_segment_t old_fs = get_fs();  /*get fs*/
+	set_fs(KERNEL_DS);  /*set fs -> kernel_ds*/
+
+	// 建立文件句柄
+	struct file* src_fd = filp_open(src_kd, O_RDONLY, S_IRUSR);
+	struct file* des_fd = filp_open(des_kd, O_WRONLY | O_CREAT, S_IRUSR|S_IWUSR);
+	if (IS_ERR(src_fd)){
+		printk("src_fd error\n");
+		return -1;
+	}
+	if (IS_ERR(des_fd)){
+		printk("des_fd error\n");
+		return -1;
+	}
+
+	// copy start
+	int len;
+	do{
+
+		len = vfs_read(src_fd,buf, sizeof(buf), &src_fd->f_pos);
+		vfs_write(des_fd, buf, len, &des_fd->f_pos);
+	}
+	while (len>0);
+
+	filp_close(des_fd,NULL);
+	filp_close(src_fd,NULL);
+	set_fs(old_fs);   /*recovery*/
+
+	return 0;
+}
