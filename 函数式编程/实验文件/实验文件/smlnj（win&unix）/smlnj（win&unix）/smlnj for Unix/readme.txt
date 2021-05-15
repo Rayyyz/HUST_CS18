@@ -1,0 +1,1 @@
+The only file you need to download manually is config.tgz. Unpack, configure by editing config/targets, and install by running config/install.sh. The installer automatically downloads any additional files it might need. For more information, see INSTALL. 

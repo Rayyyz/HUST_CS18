@@ -1,0 +1,44 @@
+
+<!-- saved from url=(0058)http://joung.im.ntu.edu.tw/teaching/pl/2007/ML/readme.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=Big5"><title>SML installation tutorial</title></head><body zhtongwen="traditional" lang="zh-tw">
+<p>（1）下載  <a href="http://joung.im.ntu.edu.tw/teaching/pl/2007/ML/smlnj.zip">Standard ML of New Jersey </a>並且解壓縮(本範例解壓縮於D:/PL/smlnj之下)</p>
+<p>     (該連結請盡量不要有中文，以免產生問題</p>
+
+<p>（2）於「開始」--&gt;「控制台」--&gt;「系統」--&gt;「進階」下，點選「系統環境變數」</p>
+<p>（3）新增一個系統環境變數"SMLNJ_HOME"，並將變數值填入剛剛解壓縮的位置( D:\PL\smlnj )如下圖</p><p><img src="./SML installation tutorial_files/sml_1.jpg"></p>
+
+<p>（4）於PATH之下再加上一個D:\PL\smlnj\bin;的路徑 (如果之前PATH已經有東西的話，請使用分號區隔)
+<font color="Red;">請不要把之前的Path刪除，以免造成系統不穩定</font></p><p>如果沒有PATH的話，請自行新增一個名為PATH的環境變數
+
+</p><p>（5）有兩種方法可以執行Standard ML of New Jersey（以後簡稱 SML）</p><p>
+</p><p>1、到D:\PL\smlnj\bin之下，執行sml.bat，2、於「開始」--&gt;「執行」中輸入sml，會出現如下的圖示：</p>
+<p><img src="./SML installation tutorial_files/sml_2.jpg"></p>
+
+<p>（4）以下將透過簡易的範例，介紹兩種常用的Standard使用方式：
+	</p><blockquote>
+	<p>	一、直接與 Standard ML of New Jersey（以後簡稱 SML）互動： </p>
+		<blockquote>
+		<p></p><li>當看到『-』符號時，表示可以開始使用 SML。<p></p>
+		<p></p></li><li> 接著依序輸入以下的範例（下圖有詳細說明）： <p></p>
+			<blockquote>
+			<p><span style="font-size: 12pt; color: red;" lang="EN-US"><i> <b>fun inc x = x + 1		</b></i></span> <span style="color: blue;"><b>[Enter]</b></span></p>
+			<p><span style="font-size: 12pt; color: red;" lang="EN-US"><i><b>fun f n = (inc n) * 2;	</b></i></span> <span style="color: blue;"><b>[Enter]</b></span></p>
+			<p><span style="font-size: 12pt; color: red;" lang="EN-US"><i><b>f (1+1);			</b></i></span> <span style="color: blue;"><b>[Enter]</b></span></p>
+			</blockquote>
+		</li></blockquote>
+<p><img src="./SML installation tutorial_files/2.bmp"></p>
+	<p>	二、藉由檔案與 SML 互動：</p>
+		<blockquote>
+		<p></p><li> 將程式寫在一個『純文字檔』中，並假設檔名為<span style="font-size: 12pt; color: red;" lang="EN-US"><b><a href="http://joung.im.ntu.edu.tw/teaching/pl/2007/ML/test.sml">test.sml</a></b></span>。<p></p>
+		<p></p></li><li> 假設<span style="font-size: 12pt; color: red;" lang="EN-US"><b>test.sml</b></span> 的存放路徑為<span style="font-size: 12pt; color: red;" lang="EN-US"><b>C:\sml\test.sml</b></span><p></p> 
+		<p></p></li><li> 於 SML 輸入下列指令便可執行此程式（採用同樣的範例，如下圖所示）。<p></p>
+			<blockquote><p><span style="font-size: 12pt; color: red;" lang="EN-US"> <b>use "C:\\SML\\test.sml";  </b></span> <span style="color: blue;"><b> [Enter]</b></span>(注意 '<b> \ </b>' 的數量)</p></blockquote>
+		</li></blockquote>
+	<p><img src="./SML installation tutorial_files/3.bmp"></p>
+	<p>也可以將.sml的檔案全部設成自動由D:\PL\smlnj\bin\sml.bat執行。</p>
+	</blockquote>
+<p></p>
+
+<p>（5）欲取得更多資訊可至 <a href="http://cm.bell-labs.com/cm/cs/what/smlnj/index.html">http://cm.bell-labs.com/cm/cs/what/smlnj/index.html</a>。</p>
+
+</body><style></style><style></style></html>
