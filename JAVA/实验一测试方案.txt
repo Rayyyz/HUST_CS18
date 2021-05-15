@@ -1,0 +1,86 @@
+1：DocumentBuilderTest
+（1）不采用任何过滤器，以2.txt作为输入文档，测试public  abstract AbstractDocument build(int docId, String docPath, AbstractTermTupleStream termTupleStream);
+事先构造好的以2.txt作为输入文档测试用的json文件,不用任何过滤器：document_2_txt_nofilter.json
+
+（2）采用StopWordTermTupleFilter，以2.txt作为输入文档，测试public  abstract AbstractDocument build(int docId, String docPath, AbstractTermTupleStream termTupleStream);
+事先构造好的以2.txt作为输入文档测试用的json文件：document_2_txt_stopword_filter.json
+
+（3）采用PatternTermTupleFilter，以2.txt作为输入文档，测试public  abstract AbstractDocument build(int docId, String docPath, AbstractTermTupleStream termTupleStream);
+事先构造好的以2.txt作为输入文档测试用的json文件：document_2_txt_pattern_filter.json
+
+（4）采用LengthTermTupleFilter，以2.txt作为输入文档，测试public  abstract AbstractDocument build(int docId, String docPath, AbstractTermTupleStream termTupleStream);
+事先构造好的以2.txt作为输入文档测试用的json文件：document_2_txt_length_filter.json
+
+（5）采用三个过滤器，以2.txt作为输入文档，测试public  abstract AbstractDocument build(int docId, String docPath, AbstractTermTupleStream termTupleStream);
+事先构造好的以2.txt作为输入文档测试用的json文件：document_2_txt_allfilter.json
+
+（6）以2.txt作为输入文档，测试public abstract AbstractDocument build(int docId, String docPath, File file);采用拦截，采用三个过滤器
+事先构造好的以2.txt作为输入文档测试用的json文件：document_2_txt_allfilter.json
+
+（7）以2.txt作为输入文档，测试public abstract AbstractDocument build(int docId, String docPath, File file);不采用拦截，看学生代码的结果是否采用了三个过滤器
+事先构造好的以2.txt作为输入文档测试用的json文件：document_2_txt_allfilter.json
+
+
+2：IndexTest（采用三个过滤器）
+需要事先构造好如下索引并产生json文件
+基于1.txt构造好索引1：				index_1_txt.json
+基于1.txt和2.txt构造好索引2			index_1_2_txt.json
+基于1.txt，2.txt，3.txt的索引:		index_1_2_3_txt.json
+
+（1）测试AddDocument
+首先基于1.txt构造好索引1，基于1.txt和2.txt构造好索引2
+测试代码先加载索引index_1_txt.json，执行AddDocument(2.txt)，得到新的索引，比较新的索引和索引index_1_2_txt.json是否一样，特别是注意Posting的更新
+
+（2）测试testWriteObject和testReadObject
+测试代码加载事先构造好的基于1.txt，2.txt，3.txt的索引，进行测试,	index_1_2_3_txt.json
+
+（3）测试load和save:index目录下的index.dat
+测试代码加载事先构造好的基于1.txt，2.txt，3.txt的索引，进行测试,	index_1_2_3_txt.json
+
+（4）测试toString
+测试代码加载事先构造好的基于1.txt，2.txt，3.txt的索引，进行测试：注意测试是否复用内部对象的toString,	index_1_2_3_txt.json
+
+（5）测试testGetDictionary
+测试代码加载事先构造好的基于1.txt，2.txt，3.txt的索引，进行测试,	index_1_2_3_txt.json
+
+（6）测试testOptimize
+测试代码加载事先构造好的乱序的索引index_1_2_3_txt_to_optimize.json，测试optimize方法，和index_1_2_3_txt.json比较
+
+（7）测试search
+加载加载事先构造好的基于1.txt，2.txt，3.txt的索引index_1_2_3_txt.json，进行测试，
+检索词为activity,检索结果postinglist_index_1_2_3_activity.json
+
+3：IndexBuilderTest
+测试代码加载事先构造好的基于1.txt，2.txt，3.txt的索引，进行测试,	index_1_2_3_txt.json
+
+4：HitTest（采用三个过滤器）
+加载加载事先构造好的基于1.txt，2.txt，3.txt的索引，进行测试，检索词为activity,index_1_2_3_txt.json，检索结果hit_index_1_2_3_activity.json
+
+5：IndexSearcherTest（采用三个过滤器）
+用于检索和排序的测试索引：	，加载index_search_sort.json
+基于下面几个文档进行测试
+文档1：The novel coronavirus death rate According to Government health authority of England Government, most of the coronavirus cases are in England Government
+文档2：The release of the new James Bond film coronavirus death continue to spread England Government
+文档3： The England Government want to establish the country as a visitor destination for Chinese Government people as part of  new strategy to boost trade rate 
+
+检索词：
+coronavirus 				hit_index_search_sort_coronavirus.json
+government					hit_index_search_sort_government.json
+二元检索词 death rate:	 	hit_index_search_sort_death_rate_unoin.json   hit_index_search_sort_death_rate_intersection.json
+
+6：SimpleSorterTest
+基于hit_index_1_2_3_activity.json构造命中结果，然后修改每个文档的得分，再排序，看看是否正确
+
+检索词：
+coronavirus 
+government
+二元检索词 death rate  
+
+还需要实现
+二元检索（SimpleSort要重新实现？不需要）
+获取文件绝对路径里的文件名（凡是涉及到docPath比较的都要修改？）（需要，因为测试比较的基准的docPath和实际测试时的docPath不一样）
+比较二个Hits的排序结果是否一样
+
+各位同学，第30章多线程基础练习题的第二大题第5小题出反了，应该是：下面说法错误的是
+更新版已发到群里
+
