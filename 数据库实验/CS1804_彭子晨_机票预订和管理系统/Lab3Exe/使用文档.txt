@@ -1,0 +1,4 @@
+1. 进入mysql创建一个数据库，名字flight_system
+2. 令该数据库运行flight_system.sql文件，建立表
+3. 如果连接正确可以执行程序
+（如果不正确则用Eclipse打开源程序，更改DBHelper的数据库url、账号、密码）
