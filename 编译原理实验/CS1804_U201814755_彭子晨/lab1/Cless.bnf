@@ -1,0 +1,63 @@
+Program             ::= DeclList
+
+(*声明列表 DeclList*)
+DeclList            ::= Decl DeclList | ε
+Decl                ::= VarDecl | FuncDecl | ArrayDecl 
+VarDecl             ::= Type,Space,Identifier,["=",Exp],{",",Identifier,["=",Exp]},";"
+FuncDecl            ::= Type,Space,Identifier,"(",ParameterList,")",( CompStmt | ";" )
+(*int a[2]={1,2}; int a[9];*)
+ArrayDecl           ::= Type,Space,Identifier,"[",Number,"]",["=","{",Expr,"}"],";"     
+ParameterList       ::= Type,Space,Identifier,{",",Type,Space,Identifier} | ε
+Type                ::= int | float | bool | char | string | void
+Space               ::= " " | Space," "
+
+(*字母,数字,空格 letter,digit,space*)
+Letter              ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" 
+                      | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" 
+                      | "u" | "v" | "w" | "x" | "y" | "z" | "A" | "B" | "C" | "D" 
+                      | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N"
+                      | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" 
+                      | "Y" | "Z" 
+Digit               ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" 
+NoZeroDigit         ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" 
+Number              ::= NoZeroDigit,{Digit} | "0"
+DigitHex            ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+                      | "a" | "b" | "c" | "d" | "e" | "f" | "A" | "B" | "C" | "D"
+                      | "E" | "F" 
+DigitHexPre         ::= "0x" | "0X" 
+
+(*标识符定义 Identifier*)
+Identifier          ::= Letter | Identifier Digit | Identifier Letter ;
+
+(*语句 stmt*)
+Stmt                ::= Exp,";" | CompStmt | IfStmt | WhileStmt | ForStmt | EmptyStmt | InputStmt | OutputStmt
+StmtList            ::= Stmt StmtList | ε
+CompStmt            ::= "{",StmtList,"}"
+IfStmt              ::= "if","(",Exp,")", Stmt ["else", Stmt]
+WhileStmt           ::= "while","(",Exp,")", Stmt 
+ForStmt             ::= "for","("[SimpleStmt],";",[BoolExp],";",[SimpleStmt],")", Stmt
+EmptyStmt           ::= ";"
+SimpleStmt          ::= Identifier,"=",Exp,";"
+InputStmt           ::= "input","(",Identifier,{",",Identifier},")",";"
+OutputStmt          ::= "output","(",Identifier,{",",Identifier},")",";"
+Exp                 ::= "(",Exp,")" | Exp,RelationOp,Exp | Exp,CalculateOp,Exp
+                      | Exp,LogicOp,Exp | SelfExp | BreakExp | ContinueExp
+SelfExp             ::= [SelfOp],Identifier,[SelfOp]
+BoolExp             ::= Exp,RelationOp,Exp
+BreakExp            ::= "break"
+ContinueExp         ::= "continue"
+
+(*运算符 operation*)
+Operation           ::= AssignOp | RelationOp | CalculateOp | LogicOp | SelfOp
+AssignOp            ::= "="
+RelationOp          ::= "!=" | "==" | "<" | ">" | "<=" | ">="
+CalculateOp         ::= "+" | "-" | "*" | "/" | "%"
+LogicOp             ::= "&&" | "||"
+SelfOp              ::= "++" | "--"
+
+(*界符 divCharacter*)
+DivCharacter        ::= "[" | "]"  | "(" | ")" | "," | ";" | "{" | "}" | "\"" | "#"
+
+(*关键字 keyword*)
+KeyWord             ::= "int" | "float" | "bool" | "char" | "void" | "main" | "if" | "else" | "while" 
+                      | "for" | "const" | "input" | "output"
