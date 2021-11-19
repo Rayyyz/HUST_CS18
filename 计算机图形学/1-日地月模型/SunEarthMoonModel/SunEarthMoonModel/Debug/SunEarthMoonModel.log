@@ -1,5 +1,5 @@
 ﻿  model.cpp
-c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\1-日地月模型\sunearthmoonmodel\sunearthmoonmodel\model.cpp(249): warning C4305: “参数”: 从“double”到“T”截断
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\1-日地月模型\sunearthmoonmodel\sunearthmoonmodel\model.cpp(255): warning C4305: “参数”: 从“double”到“T”截断
           with
           [
               T=float

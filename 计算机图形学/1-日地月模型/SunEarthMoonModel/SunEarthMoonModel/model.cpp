@@ -17,15 +17,22 @@ const unsigned int SCR_WIDTH = 2000;
 const unsigned int SCR_HEIGHT = 1500;
 float aspact = (float)4.0 / (float)3.0;
 
+//旋转参数-太阳自转
+static GLfloat xRotS = 0.0f;
+static GLfloat yRotS = 0.0f;
+
+//旋转参数-地自转
+static GLfloat xRotE = 0.0f;
+static GLfloat yRotE = 0.0f;
+
 //旋转参数-日地公转
-static GLfloat xRot1 = 20.0f;
-static GLfloat yRot1 = 20.0f;
+static GLfloat xRot1 = 0.0f;
+static GLfloat yRot1 = 0.0f;
 
 //旋转参数-地月公转
-static GLfloat xRot2 = 20.0f;
-static GLfloat yRot2 = 20.0f;
+static GLfloat xRot2 = 0.0f;
+static GLfloat yRot2 = 0.0f;
 
-static GLfloat xRot = 20.0f;
 
 //句柄参数
 GLuint vertex_array_object; // == VAO句柄
@@ -36,8 +43,8 @@ int shader_program;//着色器程序句柄
 //球的数据参数
 std::vector<float> sphereVertices;
 std::vector<int> sphereIndices;
-const int Y_SEGMENTS = 30;
-const int X_SEGMENTS = 30;
+const int Y_SEGMENTS = 20;
+const int X_SEGMENTS = 20;
 const float Radio = 3.0;
 const GLfloat  PI = 3.14159265358979323846f;
 
@@ -62,12 +69,11 @@ void initial(void)
 		}
 	}
 
-	// 生成球的顶点
+	// 生成球的Indices
 	for (int i = 0; i < Y_SEGMENTS; i++)
 	{
 		for (int j = 0; j < X_SEGMENTS; j++)
 		{
-
 			sphereIndices.push_back(i * (X_SEGMENTS + 1) + j);
 			sphereIndices.push_back((i + 1) * (X_SEGMENTS + 1) + j);
 			sphereIndices.push_back((i + 1) * (X_SEGMENTS + 1) + j + 1);
@@ -83,7 +89,6 @@ void initial(void)
 	glGenBuffers(1, &vertex_buffer_object);
 	//生成并绑定球体的VAO和VBO
 	glBindVertexArray(vertex_array_object);
-
 	glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer_object);
 	// 将顶点数据绑定至当前默认的缓冲中
 	glBufferData(GL_ARRAY_BUFFER, sphereVertices.size() * sizeof(float), &sphereVertices[0], GL_STATIC_DRAW);
@@ -165,7 +170,7 @@ void initial(void)
 	glUseProgram(shader_program);
 
 	//设定点线面的属性
-	glPointSize(15);//设置点的大小
+	glPointSize(10);//设置点的大小
 	glLineWidth(5);//设置线宽
 
 	//启动剔除操作
@@ -184,18 +189,26 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 		glfwSetWindowShouldClose(window, GL_TRUE);
 		break;
 	case GLFW_KEY_UP:
-		xRot1 -= 3.0f;
-		xRot2 -= 3.0f;
-		break;
-	case GLFW_KEY_DOWN:
+		xRotS += 3.0f;
+		xRotE += 3.0f;
 		xRot1 += 3.0f;
 		xRot2 += 3.0f;
 		break;
+	case GLFW_KEY_DOWN:
+		xRotS -= 3.0f;
+		xRotE -= 3.0f;
+		xRot1 -= 3.0f;
+		xRot2 -= 3.0f;
+		break;
 	case GLFW_KEY_LEFT:
+		yRotS -= 3.0f;
+		yRotE -= 3.0f;
 		yRot1 -= 3.0f;
 		yRot2 -= 3.0f;
 		break;
 	case GLFW_KEY_RIGHT:
+		yRotS += 3.0f;
+		yRotE += 3.0f;
 		yRot1 += 3.0f;
 		yRot2 += 3.0f;
 		break;
@@ -227,26 +240,28 @@ void Draw(void)
 	unsigned int transformLoc = glGetUniformLocation(shader_program, "transform");
 	glBindVertexArray(vertex_array_object);       // 绑定VAO
 
-	// 绘制红色的太阳
-	vmath::mat4 trans1 = vmath::perspective(60, aspact, 1.0f, 500.0f) *vmath::translate(0.0f, 0.0f, -6.0f);
+	// 绘制红色的太阳，太阳自转约25天
+	xRotS += (float)0.1f;
+	vmath::mat4 trans1 = vmath::perspective(60, aspact, 1.0f, 500.0f) *vmath::translate(0.0f, 0.0f, -6.0f) * vmath::rotate(xRotS, vmath::vec3(0.0, 1.0, 0.0));
 	glUniformMatrix4fv(transformLoc, 1, GL_FALSE, trans1);
 	GLfloat vColor[4] = { 1.0f, 0.0f, 0.0f, 1.0f };
 	unsigned int colorLoc = glGetUniformLocation(shader_program, "color");
 	glUniform4fv(colorLoc, 1, vColor);
 	glDrawElements(GL_TRIANGLES, X_SEGMENTS*Y_SEGMENTS * 6, GL_UNSIGNED_INT, 0);
 
-	//绘制蓝色的地球
-	xRot1 += (float)0.10f;
-	xRot += (float)1.0f;
-	vmath::mat4 trans2 = trans1* vmath::rotate(xRot1, vmath::vec3(0.0, 0.0, 1.0))*vmath::translate(3.0f, 0.0f, 0.0f)*vmath::scale(0.3f);
+	//绘制蓝色的地球，地球自转约1天，日地公转约365天（大概速度如下，不是很精确）
+	xRot1 += (float)0.01f;
+	xRotE += (float)1.3f;
+	vmath::mat4 trans2 = trans1 * vmath::rotate(xRot1, vmath::vec3(0.0, 0.0, 1.0)) *vmath::scale(0.3f)* vmath::translate(0.0f, 0.0f, 10.0f) * vmath::rotate(xRotE, vmath::vec3(0.866, 0.5, 0.0));
 	glUniformMatrix4fv(transformLoc, 1, GL_FALSE, trans2);
 	GLfloat vColor2[4] = { 0.0f, 0.0f, 1.0f, 1.0f };
 	glUniform4fv(colorLoc, 1, vColor2);
 	glDrawElements(GL_TRIANGLES, X_SEGMENTS*Y_SEGMENTS * 6, GL_UNSIGNED_INT, 0);
 
-	//绘制黄色的月球
-	xRot2 += (float)0.80f;
-	vmath::mat4 trans3 = trans2 * vmath::rotate(xRot2, vmath::vec3(0.0, 0.6, 0.8))*vmath::translate(1.5f, 0.0f, 0.0f)*vmath::scale(0.3f);
+
+	//绘制黄色的月球，月地公转约27天
+	xRot2 += (float)0.1f;
+	vmath::mat4 trans3 = trans2 * vmath::rotate(xRot2, vmath::vec3(0.0, 0.0, 1.0)) * vmath::translate(0.0f, 0.0f, 2.0f)* vmath::scale(0.5f) ;
 	glUniformMatrix4fv(transformLoc, 1, GL_FALSE, trans3);
 	GLfloat vColor3[4] = { 0.8f, 0.8f, 0.0f, 1.0f };
 	glUniform4fv(colorLoc, 1, vColor3);
