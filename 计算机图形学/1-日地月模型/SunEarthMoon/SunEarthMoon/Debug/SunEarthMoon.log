@@ -1,0 +1,12 @@
+﻿  main.cpp
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\1-日地月模型\sunearthmoon\sunearthmoon\main.cpp(78): warning C4244: “参数”: 从“float”转换到“GLint”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\1-日地月模型\sunearthmoon\sunearthmoon\main.cpp(87): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\1-日地月模型\sunearthmoon\sunearthmoon\main.cpp(98): warning C4244: “参数”: 从“float”转换到“GLint”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\1-日地月模型\sunearthmoon\sunearthmoon\main.cpp(112): warning C4244: “参数”: 从“float”转换到“GLint”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\1-日地月模型\sunearthmoon\sunearthmoon\main.cpp(126): warning C4244: “参数”: 从“float”转换到“GLint”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\1-日地月模型\sunearthmoon\sunearthmoon\main.cpp(150): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\1-日地月模型\sunearthmoon\sunearthmoon\main.cpp(156): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\1-日地月模型\sunearthmoon\sunearthmoon\main.cpp(160): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\1-日地月模型\sunearthmoon\sunearthmoon\main.cpp(162): warning C4244: “参数”: 从“float”转换到“GLint”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\1-日地月模型\sunearthmoon\sunearthmoon\main.cpp(168): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+  SunEarthMoon.vcxproj -> C:\Users\Ray\Documents\HUST\_StudyData\HUST_CS18\HUST_CS18\计算机图形学\1-日地月模型\SunEarthMoon\Debug\SunEarthMoon.exe

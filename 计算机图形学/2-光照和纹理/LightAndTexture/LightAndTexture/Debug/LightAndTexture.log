@@ -1,0 +1,21 @@
+﻿  main.cpp
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\2-光照和纹理\lightandtexture\lightandtexture\main.cpp(50): warning C4473: “printf”: 没有为格式字符串传递足够的参数
+  c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\2-光照和纹理\lightandtexture\lightandtexture\main.cpp(50): note: 占位符和其参数预计 1 可变参数，但提供的却是 0 参数
+  c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\2-光照和纹理\lightandtexture\lightandtexture\main.cpp(50): note: 缺失的可变参数 1 为格式字符串“%s”所需
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\2-光照和纹理\lightandtexture\lightandtexture\main.cpp(101): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\2-光照和纹理\lightandtexture\lightandtexture\main.cpp(102): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\2-光照和纹理\lightandtexture\lightandtexture\main.cpp(103): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\2-光照和纹理\lightandtexture\lightandtexture\main.cpp(104): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\2-光照和纹理\lightandtexture\lightandtexture\main.cpp(107): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\2-光照和纹理\lightandtexture\lightandtexture\main.cpp(108): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\2-光照和纹理\lightandtexture\lightandtexture\main.cpp(109): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\2-光照和纹理\lightandtexture\lightandtexture\main.cpp(110): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\2-光照和纹理\lightandtexture\lightandtexture\main.cpp(126): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\2-光照和纹理\lightandtexture\lightandtexture\main.cpp(151): warning C4244: “参数”: 从“float”转换到“GLint”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\2-光照和纹理\lightandtexture\lightandtexture\main.cpp(175): warning C4244: “参数”: 从“float”转换到“GLint”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\2-光照和纹理\lightandtexture\lightandtexture\main.cpp(199): warning C4244: “参数”: 从“float”转换到“GLint”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\2-光照和纹理\lightandtexture\lightandtexture\main.cpp(225): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\2-光照和纹理\lightandtexture\lightandtexture\main.cpp(231): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\2-光照和纹理\lightandtexture\lightandtexture\main.cpp(235): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+c:\users\ray\documents\hust\_studydata\hust_cs18\hust_cs18\计算机图形学\2-光照和纹理\lightandtexture\lightandtexture\main.cpp(242): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+  LightAndTexture.vcxproj -> C:\Users\Ray\Documents\HUST\_StudyData\HUST_CS18\HUST_CS18\计算机图形学\2-光照和纹理\LightAndTexture\Debug\LightAndTexture.exe
